@@ -1,0 +1,7 @@
+flask
+tensorflow
+tensorflow-hub
+numpy
+pandas
+Pillow
+gunicorn

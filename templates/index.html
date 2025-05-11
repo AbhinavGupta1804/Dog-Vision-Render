@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Classifier</title>
+    <link rel="stylesheet" href="static\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="main-title">Dog Breed Classifier <span class="animated-underline"></span></h1>
+            <p class="description">Identify dog breeds with advanced AI technology</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="grid-container">
+            <!-- Upload Section -->
+            <section class="upload-section card">
+                <h2 class="section-title">
+                    <i class="fas fa-upload"></i>
+                    Upload Image
+                </h2>
+                <div class="upload-container" id="upload-container">
+                    <div class="upload-area" id="dropArea">
+                        <div class="upload-content" id="uploadContent">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Drag & drop your dog image here</p>
+                            <p class="upload-text-small">or</p>
+                            <div class="upload-buttons">
+                                <button class="btn upload-btn" id="browseBtn">
+                                    <span class="btn-text">Browse Files</span>
+                                    <span class="btn-icon"><i class="fas fa-folder-open"></i></span>
+                                </button>
+                                <button class="btn sample-btn" id="sampleBtn">
+                                    <span class="btn-text">Use Sample</span>
+                                    <span class="btn-icon"><i class="fas fa-dog"></i></span>
+                                </button>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </div>
+                        <div class="uploaded-image-container" id="uploadedImageContainer">
+                            <img id="uploadedImage" class="uploaded-image" src="" alt="Uploaded dog image">
+                            <div class="image-overlay">
+                                <button class="btn change-image-btn" id="changeImageBtn">
+                                    <i class="fas fa-exchange-alt"></i> Change
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section card">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-bar"></i>
+                    Prediction Results
+                </h2>
+                <div class="results-container">
+                    <!-- Loading Spinner -->
+                    <div class="loading-container" id="loadingOverlay">
+                        <div class="spinner">
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-text">Analyzing...</div>
+                        </div>
+                    </div>
+
+                    <!-- Results Placeholder -->
+                    <div class="results-placeholder" id="resultsPlaceholder">
+                        <i class="fas fa-search placeholder-icon"></i>
+                        <p>Upload a dog image to see breed predictions</p>
+                    </div>
+
+                    <!-- Prediction Results -->
+                    <div class="prediction-results" id="predictionResults">
+                        <div class="top-prediction">
+                            <div class="prediction-image-container">
+                                <img id="topPredictionImg" class="prediction-image" src="" alt="Top prediction breed">
+                                <div class="image-glow"></div>
+                            </div>
+                            <div class="prediction-info">
+                                <h3 class="breed-name" id="topBreedName">Dog Breed</h3>
+                                <div class="confidence-container">
+                                    <div class="confidence-label">Confidence:</div>
+                                    <div class="confidence-value" id="topConfidence">95%</div>
+                                    <div class="confidence-bar-container">
+                                        <div class="confidence-bar" id="topConfidenceBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="other-predictions" id="otherPredictions">
+                            <!-- Other predictions will be added here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2 class="about-title">About This Project</h2>
+        
+        <div class="about-grid">
+            <div class="about-card fade-up">
+                <div class="about-card-icon"><i class="fas fa-database"></i></div>
+                <h3 class="about-card-title">Dataset</h3>
+                <p class="about-card-text">
+                    This classifier is trained on Stanford Dogs Dataset containing over 20,000 images across 120 dog breeds. 
+                    Each image has been carefully annotated and preprocessed to ensure high-quality training data.
+                </p>
+            </div>
+            
+            <div class="about-card fade-up">
+                <div class="about-card-icon"><i class="fas fa-brain"></i></div>
+                <h3 class="about-card-title">Model</h3>
+                <p class="about-card-text">
+                    The backend uses a TensorFlow deep learning model with transfer learning techniques. 
+                    It leverages a pre-trained convolutional neural network fine-tuned for dog breed recognition with high accuracy.
+                </p>
+            </div>
+            
+            <div class="about-card fade-up">
+                <div class="about-card-icon"><i class="fas fa-star"></i></div>
+                <h3 class="about-card-title">Uniqueness</h3>
+                <p class="about-card-text">
+                    What sets this classifier apart is its ability to provide visual breed comparisons along with predictions, 
+                    helping users understand similarities between breeds and confidence scores.
+                </p>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Dog Breed Classifier. All rights reserved.</p>
+    </footer>
+
+    <script src="static\script.js"></script>
+</body>
+</html>
